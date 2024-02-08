@@ -2,12 +2,13 @@ package com.fl.spring;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class TestSpring {
+public class Main {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        TestBean testBean = context.getBean("testBean", TestBean.class);
-        
-        System.out.println(testBean.getName());
+
+        IMusic music = context.getBean("musicBean", IMusic.class);
+        MusicPlayer musicPlayer = new MusicPlayer(music);
+        musicPlayer.playMusic();
 
         context.close();
     }
