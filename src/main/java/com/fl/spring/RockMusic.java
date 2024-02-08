@@ -5,5 +5,4 @@ public class RockMusic implements IMusic {
     public String getSong() {
         return "Wind cries Mary";
     }
-    
 }
